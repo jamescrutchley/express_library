@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -11,15 +12,13 @@ const compression = require("compression");
 const helmet = require("helmet");
 const RateLimit = require("express-rate-limit");
 
+
 var app = express();
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-const dev_db_url =
-  "mongodb+srv://myAtlasDBUser:BsKF0o3yLsiHgsOc@myatlasclusteredu.trdhvus.mongodb.net/library?retryWrites=true&w=majority";
-
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI || process.env.DEV_URI
 
 main().catch((err) => console.log(err));
 async function main() {
