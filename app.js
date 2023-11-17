@@ -72,4 +72,3 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-// mongodb+srv://myAtlasDBUser:BsKF0o3yLsiHgsOc@myatlasclusteredu.trdhvus.mongodb.net/library?retryWrites=true&w=majority
